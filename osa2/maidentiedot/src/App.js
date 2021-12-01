@@ -13,7 +13,7 @@ const Countries = ({countries}) => {
           <h2>{name}</h2>
           <div>capital {capital}</div>
           <div>population {population}</div>
-          <h3>languages</h3>
+          <h3>Spoken languages</h3>
           <ul>
           {languages.map((language) => {
             return (
@@ -39,17 +39,24 @@ const Weather = ({capital}) => {
   useEffect(() => {
     const axiosData = async () => {
       const response = await axios(weatherURL)
-      setWeather(response.data)
+      setWeather({
+      temp: response.data.current.temperature,
+      icons: response.data.current.weather_icons,
+      descp: response.data.current.weather_descriptions,
+      speed: response.data.current.wind_speed,
+      dir: response.data.current.wind_dir
+    })
     }
     axiosData()
   }, [weatherURL])
+
   console.log(weather)
   return (
     <div>
-      <h2>Weather in {capital}</h2>
-      <div>temperature {weather.current.temperature}</div>
-      <img src={weather.current.weather_icons} alt={weather.current.weather_descriptions}></img>
-      <div>wind {weather.current.wind_speed} mph direction {weather.current.wind_dir}</div>
+      <h3>Weather in {capital}</h3>
+      <div><b>temperature: </b> {weather.temp} Celcius</div>
+      <img src={weather.icons} alt={weather.descp}></img>
+      <div><b>wind:</b> {weather.speed} mph direction {weather.dir}</div>
     </div>
   )
 }
