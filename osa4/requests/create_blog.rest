@@ -1,0 +1,11 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxhcyIsImlkIjoiNjFiZjAwNzZiMTAxOGIzZDJlZDkzNDM5IiwiaWF0IjoxNjM5OTI3NTQ0fQ.ksMYL92yoolKYv4zYoqsizqPbY5ZM96ZAzvsZa7jjug
+
+{
+  "title": "Mary Poppendickxxxx",
+  "author": "Mary Poppendick",
+  "url": "asdasd.com",
+  "likes": 23,
+  "userId": "61bf0076b1018b3d2ed93439"
+}

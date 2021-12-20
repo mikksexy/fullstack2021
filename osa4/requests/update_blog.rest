@@ -1,0 +1,10 @@
+PUT http://localhost:3003/api/blogs/61bbd61958f8b963693a4d6d
+Content-Type: application/json
+
+
+{
+    "title": "Mary Poppendick",
+    "author": "Mary Poppendick",
+    "url": "asdasd.com",
+    "likes": 26
+  }
